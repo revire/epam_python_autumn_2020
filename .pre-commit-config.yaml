@@ -3,4 +3,8 @@ repos:
       rev: 20.8b1
       hooks:
         - id: black
-
+    - repo: https://github.com/PyCQA/isort
+      rev: 5.6.3  # Use the revision sha / tag you want to point at
+      hooks:
+        - id: isort
+          name: isort
