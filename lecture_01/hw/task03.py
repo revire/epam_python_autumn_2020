@@ -17,4 +17,22 @@ from typing import Tuple
 
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
-    ...
+    minimum = None
+    maximum = None
+    with open("some_file.txt") as fi:
+        for line in fi:
+            to_check = line.strip()
+            if maximum is None:
+                maximum = to_check
+            elif maximum < to_check:
+                maximum = to_check
+
+            if minimum is None:
+                minimum = to_check
+            elif minimum > to_check:
+                minimum = to_check
+
+    return (minimum, maximum)
+
+
+# print(find_maximum_and_minimum("some_file.txt"))
